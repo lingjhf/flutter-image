@@ -23,4 +23,6 @@ RUN echo "Downloading commandlinetools" \
     && mv "${ANDROID_HOME}/cmdline-tools/cmdline-tools" "${ANDROID_HOME}/cmdline-tools/latest/"
 
 
-RUN yes | sdkmanager "platform-tools" "tools" "build-tools;30.0.3" "platforms;android-30" && sdkmanager --licenses && flutter doctor --android-licenses
+RUN yes | sdkmanager "platform-tools" "tools" "build-tools;30.0.3" "platforms;android-30"
+RUN yes | sdkmanager --licenses
+RUN yes | flutter doctor --android-licenses
