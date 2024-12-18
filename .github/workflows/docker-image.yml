@@ -28,6 +28,6 @@ jobs:
           context: ./android
           file: ./android/Dockerfile
           push: true
-          tags: ghcr.io/lingjhf/flutter-android:3.27.1
+          tags: ghcr.io/lingjhf/flutter-image:3.27.1
           cache-from: type=gha
           cache-to: type=gha,mode=max
