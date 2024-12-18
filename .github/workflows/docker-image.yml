@@ -22,11 +22,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Build and Push
-      #   uses: docker/build-push-action@v2
-      #   with:
-      #     context: ./android
-      #     file: ./android/Dockerfile
-      #     tags: ghcr.io/lingjhf/flutter-android:3.27.1
-      #     cache-from: type=gha
-      #     cache-to: type=gha,mode=max
+      - name: Build and Push
+        uses: docker/build-push-action@v2
+        with:
+          context: ./android
+          file: ./android/Dockerfile
+          push: true
+          tags: ghcr.io/lingjhf/flutter-android:3.27.1
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
