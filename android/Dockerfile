@@ -13,6 +13,7 @@ RUN echo "Downloading flutter" \
     && wget --no-verbose --output-document=flutter.tar.xz "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.27.1-stable.tar.xz" \
     && echo "Installing flutter" \
     && tar -xJf flutter.tar.xz -C /opt \
+    && rm flutter.tar.xz \
     && git config --global --add safe.directory /opt/flutter
 
 RUN echo "Downloading commandlinetools" \
@@ -20,6 +21,7 @@ RUN echo "Downloading commandlinetools" \
     && echo "Installing commandlinetools" \
     && mkdir "${ANDROID_HOME}" \
     && unzip commandlinetools.zip -d "${ANDROID_HOME}/cmdline-tools" \
+    && rm commandlinetools.zip \
     && mv "${ANDROID_HOME}/cmdline-tools/cmdline-tools" "${ANDROID_HOME}/cmdline-tools/latest/"
 
 
